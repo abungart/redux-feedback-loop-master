@@ -8,6 +8,31 @@ import Feeling from "../Pages/Feeling/Feeling.js";
 import FeedbackDisplay from "../Pages/ReviewFeedback/ReviewFeedback.js";
 
 class App extends Component {
+  componentDidMount() {
+    console.log("Mounted");
+    this.getFeedback();
+  }
+
+  // API CALLS
+
+  getFeedback() {
+    axios({
+      method: "GET",
+      url: "/feedback",
+    })
+      .then((response) => {
+        console.log("feedback", response);
+
+        this.props.dispatch({
+          type: "GET_GALLERY",
+          payload: [...response.data],
+        });
+      })
+      .catch((err) => {
+        alert("There was an error getting feedback");
+      });
+  } // end getFeedback Function
+
   render() {
     return (
       <div className="App">
@@ -20,15 +45,15 @@ class App extends Component {
         <br />
         <Router>
           <div>
-            <ul className="nav">
-              <li>
-                <Link to="/">Leave Feedback</Link>
-              </li>
-              <li>
-                <Link to="/FeedbackDisplay">All Feedback</Link>
-              </li>
-            </ul>
-            <Route exact path="/" component={Feeling} />
+            <div className="nav">
+              <button>
+                <Link to="/Feeling">I'm a Student</Link>
+              </button>
+              <button>
+                <Link to="/FeedbackDisplay">I'm an Instructor</Link>
+              </button>
+            </div>
+            <Route exact path="/Feeling" component={Feeling} />
             <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} />
           </div>
         </Router>

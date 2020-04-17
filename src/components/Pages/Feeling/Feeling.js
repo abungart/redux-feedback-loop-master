@@ -30,7 +30,7 @@ class Feeling extends Component {
         <input
           onChange={this.handlePriceChange}
           type="text"
-          placeholder="price"
+          placeholder="feeling"
         />
         <input type="submit" value="Submit" />
       </form>
