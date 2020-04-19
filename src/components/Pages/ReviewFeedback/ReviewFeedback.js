@@ -1,18 +1,26 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+// import React, { Component } from "react";
+// import { connect } from "react-redux";
 
-class ReviewFeedback extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Review Feedback</h1>
-      </div>
-    );
-  }
-}
+// import FeedbackListItem from "../FeedbackListItem/FeedbackListItem";
 
-const putReduxStateOnProps = (reduxState) => ({
-  reduxState,
-});
+// class ReviewFeedback extends Component {
+//   render() {
+//     console.log(this.props.reduxState.feedbackReducer);
+//     return (
+//       <div>
+//         <h1>Review Feedback</h1>
+//         <ul>
+//           {this.props.reduxState.feedbackReducer.map((feedback, i) => {
+//             return <FeedbackListItem key={i} feedback={feedback} />;
+//           })}
+//         </ul>
+//       </div>
+//     );
+//   }
+// }
 
-export default connect(putReduxStateOnProps)(ReviewFeedback);
+// const putReduxStateOnProps = (reduxState) => ({
+//   reduxState,
+// });
+
+// export default connect(putReduxStateOnProps)(ReviewFeedback);

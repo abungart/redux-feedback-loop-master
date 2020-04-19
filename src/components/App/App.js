@@ -6,6 +6,7 @@ import "./App.css";
 
 import Feeling from "../Pages/Feeling/Feeling.js";
 import FeedbackDisplay from "../Pages/ReviewFeedback/ReviewFeedback.js";
+import Understanding from "../Pages/Understanding/Understanding";
 
 class App extends Component {
   componentDidMount() {
@@ -54,7 +55,10 @@ class App extends Component {
               </button>
             </div>
             <Route exact path="/Feeling" component={Feeling} />
+            <Route exact path="/Understanding" component={Understanding} />
+            <Route exact path="/Support" component={Support} />
             <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} />
+            {/* <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} /> */}
           </div>
         </Router>
       </div>
