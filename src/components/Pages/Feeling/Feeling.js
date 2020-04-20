@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class Feeling extends Component {
   state = {
-    feedback: { feeling: 0 },
+    feeling: "",
   };
 
   feelingChange = (event) => {
@@ -19,11 +18,13 @@ class Feeling extends Component {
 
   addFeeling = (event) => {
     event.preventDefault();
-    // TODO: Dispatch here
+    console.log("addFeeling Running");
+    //Dispatch here
     this.props.dispatch({
       type: "ADD_FEELING",
       payload: this.state.feedback,
     });
+    this.props.history.push("/Understanding");
   };
 
   render() {
@@ -31,7 +32,7 @@ class Feeling extends Component {
       <div>
         <h2>Feeling</h2>
         <form onSubmit={this.addFeeling}>
-          <label for="1">1:</label>
+          <label htmlFor="1">1:</label>
           <input
             type="radio"
             id="1"
@@ -39,7 +40,7 @@ class Feeling extends Component {
             value="1"
             onChange={this.feelingChange}
           />
-          <label for="2"> 2:</label>
+          <label htmlFor="2"> 2:</label>
           <input
             type="radio"
             id="2"
@@ -47,7 +48,7 @@ class Feeling extends Component {
             value="2"
             onChange={this.feelingChange}
           />
-          <label for="3"> 3:</label>
+          <label htmlFor="3"> 3:</label>
           <input
             type="radio"
             id="3"
@@ -55,7 +56,7 @@ class Feeling extends Component {
             value="3"
             onChange={this.feelingChange}
           />
-          <label for="4"> 4:</label>
+          <label htmlFor="4"> 4:</label>
           <input
             type="radio"
             id="4"
@@ -63,7 +64,7 @@ class Feeling extends Component {
             value="4"
             onChange={this.feelingChange}
           />
-          <label for="5"> 5:</label>
+          <label htmlFor="5"> 5:</label>
           <input
             type="radio"
             id="5"
@@ -73,7 +74,7 @@ class Feeling extends Component {
           />
 
           <button type="submit" value="Submit">
-            <Link to="/Understanding">Submit</Link>
+            Submit
           </button>
         </form>
       </div>

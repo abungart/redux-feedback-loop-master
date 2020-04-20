@@ -5,8 +5,10 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import Feeling from "../Pages/Feeling/Feeling.js";
-import FeedbackDisplay from "../Pages/ReviewFeedback/ReviewFeedback.js";
+import FeedbackDisplay from "../Pages/FeedbackDisplay/FeedbackDisplay";
 import Understanding from "../Pages/Understanding/Understanding";
+import Support from "../Pages/Support/Support";
+import Comments from "../Pages/Comments/Comments";
 
 class App extends Component {
   componentDidMount() {
@@ -57,7 +59,9 @@ class App extends Component {
             <Route exact path="/Feeling" component={Feeling} />
             <Route exact path="/Understanding" component={Understanding} />
             <Route exact path="/Support" component={Support} />
+            <Route exact path="/Comments" component={Comments} />
             <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} />
+
             {/* <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} /> */}
           </div>
         </Router>

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class Understanding extends Component {
   state = {
-    feedback: { understanding: 0 },
+    understanding: "",
   };
 
   understandingChange = (event) => {
@@ -19,11 +18,12 @@ class Understanding extends Component {
 
   addUnderstanding = (event) => {
     event.preventDefault();
-    // TODO: Dispatch here
+    // Dispatch here
     this.props.dispatch({
       type: "ADD_FEELING",
       payload: this.state.feedback,
     });
+    this.props.history.push("/Support");
   };
 
   render() {
@@ -31,7 +31,7 @@ class Understanding extends Component {
       <div>
         <h2>Understanding</h2>
         <form onSubmit={this.addUnderstanding}>
-          <label for="1">1:</label>
+          <label htmlFor="1">1:</label>
           <input
             type="radio"
             id="1"
@@ -39,7 +39,7 @@ class Understanding extends Component {
             value="1"
             onChange={this.understandingChange}
           />
-          <label for="2"> 2:</label>
+          <label htmlFor="2"> 2:</label>
           <input
             type="radio"
             id="2"
@@ -47,7 +47,7 @@ class Understanding extends Component {
             value="2"
             onChange={this.understandingChange}
           />
-          <label for="3"> 3:</label>
+          <label htmlFor="3"> 3:</label>
           <input
             type="radio"
             id="3"
@@ -55,7 +55,7 @@ class Understanding extends Component {
             value="3"
             onChange={this.understandingChange}
           />
-          <label for="4"> 4:</label>
+          <label htmlFor="4"> 4:</label>
           <input
             type="radio"
             id="4"
@@ -63,7 +63,7 @@ class Understanding extends Component {
             value="4"
             onChange={this.understandingChange}
           />
-          <label for="5"> 5:</label>
+          <label htmlFor="5"> 5:</label>
           <input
             type="radio"
             id="5"
@@ -73,7 +73,7 @@ class Understanding extends Component {
           />
 
           <button type="submit" value="Submit">
-            <Link to="/Support">Submit</Link>
+            Submit
           </button>
         </form>
       </div>
