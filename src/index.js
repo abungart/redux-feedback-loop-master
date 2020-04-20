@@ -15,13 +15,21 @@ const feedbackReducer = (
     console.log(action.payload);
     return { ...state, ...action.payload };
   }
+  return [state];
+};
 
+const feedbackArrayReducer = (state = [], action) => {
+  if (action.type === "GET_GALLERY") {
+    console.log(action.payload);
+    return [...action.payload];
+  }
   return [state];
 };
 
 const feedbackInstance = createStore(
   combineReducers({
     feedbackReducer,
+    feedbackArrayReducer,
   })
 );
 

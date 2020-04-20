@@ -9,6 +9,7 @@ import FeedbackDisplay from "../Pages/FeedbackDisplay/FeedbackDisplay";
 import Understanding from "../Pages/Understanding/Understanding";
 import Support from "../Pages/Support/Support";
 import Comments from "../Pages/Comments/Comments";
+import ReviewFeedback from "../Pages/ReviewFeedback/ReviewFeedback";
 
 class App extends Component {
   componentDidMount() {
@@ -50,7 +51,10 @@ class App extends Component {
           <div>
             <div className="nav">
               <button>
-                <Link to="/Feeling">Start A Survey!</Link>
+                <Link to="/Feeling">I'm a Student</Link>
+              </button>
+              <button>
+                <Link to="/ReviewFeedback">I'm an Instructor</Link>
               </button>
             </div>
             <Route exact path="/Feeling" component={Feeling} />
@@ -58,6 +62,7 @@ class App extends Component {
             <Route exact path="/Support" component={Support} />
             <Route exact path="/Comments" component={Comments} />
             <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} />
+            <Route exact path="/ReviewFeedback" component={ReviewFeedback} />
           </div>
         </Router>
       </div>
