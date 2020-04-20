@@ -50,10 +50,7 @@ class App extends Component {
           <div>
             <div className="nav">
               <button>
-                <Link to="/Feeling">I'm a Student</Link>
-              </button>
-              <button>
-                <Link to="/FeedbackDisplay">I'm an Instructor</Link>
+                <Link to="/Feeling">Start A Survey!</Link>
               </button>
             </div>
             <Route exact path="/Feeling" component={Feeling} />
@@ -61,8 +58,6 @@ class App extends Component {
             <Route exact path="/Support" component={Support} />
             <Route exact path="/Comments" component={Comments} />
             <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} />
-
-            {/* <Route exact path="/FeedbackDisplay" component={FeedbackDisplay} /> */}
           </div>
         </Router>
       </div>

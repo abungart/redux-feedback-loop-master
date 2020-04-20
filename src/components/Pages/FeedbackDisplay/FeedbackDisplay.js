@@ -15,6 +15,7 @@ class FeedbackDisplay extends Component {
       .post("/feedback", feedback)
       .then((response) => {
         console.log(response.data);
+        alert("Submission Successful");
         this.props.history.push("/");
       })
       .catch((err) => {
@@ -23,29 +24,6 @@ class FeedbackDisplay extends Component {
   };
 
   render() {
-    console.log(this.props.store.feedbackReducer);
-    // let orderTypeElement = (
-    //   <div>
-    //     <h2>Delivery order for:</h2>
-    //   </div>
-    // );
-
-    // if (this.props.store.typeReducer === "carryout") {
-    //   orderTypeElement = (
-    //     <div>
-    //       <h2>Pick up order for:</h2>
-    //     </div>
-    //   );
-    // }
-
-    // const pizzaArray = this.props.store.pizzaReducer.map((pizza, index) => {
-    //   return (
-    //     <li key={index}>
-    //       {pizza.size} - {pizza.toppings}
-    //     </li>
-    //   );
-    // });
-
     return (
       <div>
         <h1>Summary Page</h1>
