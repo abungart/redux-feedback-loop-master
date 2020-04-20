@@ -17,3 +17,6 @@
   font-size: large;
 }
 
+li:nth-child(even) {
+  background-color: #a09e9e;
+}

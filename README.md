@@ -1,9 +1,36 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Redux Feedback Form
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This application allows a user to input feedback for the day using radio buttons and a comment input box. It allows an instructor to view all of the feedback that has been entered by the users.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+### Prerequisites
+
+- Node.js
+- Express
+- body-parser
+- pg
+- react
+- react-redux
+- react-router-dom
+- Axios
+
+## Installation
+
+1. Create a sql database outlined in the data.sql file.
+
+2. Open an editor of choice and run an `npm install`
+
+## Built With
+
+JavaScript
+SQL
+Postgres
+Node
+Express
+React
+Redux
+
+## License
+
+[MIT]
