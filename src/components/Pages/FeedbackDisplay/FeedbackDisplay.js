@@ -3,25 +3,24 @@ import { connect } from "react-redux";
 import axios from "axios";
 
 class FeedbackDisplay extends Component {
-  //   submitOrder = (event) => {
-  //     const order = {
-  //       customer_first_name: this.props.store.customerReducer.firstName,
-  //       customer_last_name: this.props.store.customerReducer.lastName,
-  //       customer_address: this.props.store.customerReducer.address,
-  //       order_type: this.props.store.typeReducer,
-  //       pizzas: this.props.store.pizzaReducer,
-  //     };
+  submitFeedback = (event) => {
+    const feedback = {
+      feeling: this.props.store.feedbackReducer.feeling,
+      understanding: this.props.store.feedbackReducer.understanding,
+      support: this.props.store.feedbackReducer.support,
+      comments: this.props.store.feedbackReducer.comments,
+    };
 
-  //     axios
-  //       .post("/order", order)
-  //       .then((response) => {
-  //         console.log(response.data);
-  //         this.props.history.push("/");
-  //       })
-  //       .catch((err) => {
-  //         console.warn(err);
-  //       });
-  //   };
+    axios
+      .post("/feedback", feedback)
+      .then((response) => {
+        console.log(response.data);
+        this.props.history.push("/");
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
 
   render() {
     console.log(this.props.store.feedbackReducer);
@@ -50,25 +49,13 @@ class FeedbackDisplay extends Component {
     return (
       <div>
         <h1>Summary Page</h1>
-        <h4>{this.props.store.feedbackReducer.feeling}</h4>
-        <h4>{this.props.store.feedbackReducer.understanding}</h4>
-        <h4>{this.props.store.feedbackReducer.support}</h4>
-        <h4>{this.props.store.feedbackReducer.comments}</h4>
-        {/* {orderTypeElement}
 
-        <div>
-          <h4>
-            {this.props.store.customerReducer.firstName}{" "}
-            {this.props.store.customerReducer.lastName}
-          </h4>
-          {this.props.store.customerReducer.address && (
-            <h4>{this.props.store.customerReducer.address}</h4>
-          )}
-        </div>
+        <h4>Feeling: {this.props.store.feedbackReducer.feeling}</h4>
+        <h4>Understanding: {this.props.store.feedbackReducer.understanding}</h4>
+        <h4>Support: {this.props.store.feedbackReducer.support}</h4>
+        <h4>Comments: {this.props.store.feedbackReducer.comments}</h4>
 
-        <ul>{pizzaArray}</ul>
-
-        <button onClick={this.submitOrder}>Submit Order</button> */}
+        <button onClick={this.submitFeedback}>Submit Feedback</button>
       </div>
     );
   }
